@@ -25,6 +25,7 @@ export interface CommitObject extends GitObject {
   author: string
   message: string
   timestamp: string
+  diff?: { status: string; path: string; hash: string }[]
 }
 
 export interface TreeObject extends GitObject {

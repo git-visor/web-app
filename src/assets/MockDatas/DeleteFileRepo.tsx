@@ -14,6 +14,9 @@ export const deleteFileRepo: MockData = {
         message: 'Delete README.md',
         timestamp: '2026-01-15 16:45:00',
         referencedBy: [],
+        diff: [
+          { status: 'D', path: 'README.md', hash: 'f1e2d3c4b5a6g7h8' },
+        ]
       },
       {
         hash: 'e1f2a3b4c5d6e7f8',
@@ -25,6 +28,9 @@ export const deleteFileRepo: MockData = {
         message: 'Initial commit with README',
         timestamp: '2026-01-14 10:00:00',
         referencedBy: ['d1e2f3a4b5c6d7e8'],
+        diff: [
+          { status: 'A', path: 'README.md', hash: 'f1e2d3c4b5a6g7h8' },
+        ]
       },
       {
         hash: 'a1b2c3d4e5f6g7h8',

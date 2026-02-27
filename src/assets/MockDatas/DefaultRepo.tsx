@@ -5,6 +5,13 @@ export const defaultRepo: MockData = {
     description: 'A sample repository for testing purposes',
     objects: [
     {
+      hash: 'test tag',
+      type: 'tag',
+      size: 64,
+      objectHash: 'a7f3c2e4d8b9a1c5',
+      referencedBy: [],
+    },
+    {
       hash: 'a7f3c2e4d8b9a1c5',
       type: 'commit',
       size: 256,
@@ -14,6 +21,11 @@ export const defaultRepo: MockData = {
       message: 'Add user authentication',
       timestamp: '2026-01-15 14:30:00',
       referencedBy: [],
+      diff: [
+        { status: 'A', path: 'Auth.tsx', hash: 'c2a6d9e3f7b1d4a8' },
+        { status: 'A', path: 'Login.tsx', hash: 'a9d3f6e2b8c4d1a7' },
+        { status: 'R', path: 'api-renamed.ts', hash: 'b1c8e4d9a3f7b2e6' },
+      ]
     },
     {
       hash: 'b4e5d1a3c7f2e8b9',
@@ -25,6 +37,9 @@ export const defaultRepo: MockData = {
       message: 'Update README.md',
       timestamp: '2026-01-15 11:15:00',
       referencedBy: ['a7f3c2e4d8b9a1c5'],
+      diff: [
+        { status: 'A', path: '/utils/README.md', hash: 'd5e2a8f3c7b4d9a1' },
+      ]
     },
     {
       hash: 'c8f2a3b1e5d7a9c4',
@@ -36,6 +51,9 @@ export const defaultRepo: MockData = {
       message: 'Initial commit',
       timestamp: '2026-01-12 09:00:00',
       referencedBy: ['b4e5d1a3c7f2e8b9'],
+      diff: [
+        { status: 'A', path: 'api.ts', hash: 'b1c8e4d9a3f7b2e6' },
+      ]
     },
     {
       hash: 'e7a3f2d8c1b5e4a9',
@@ -43,6 +61,7 @@ export const defaultRepo: MockData = {
       size: 128,
       names: ['test repo'],
       entries: [
+        { mode: '100644', type: 'blob', hash: 'b1c8e4d9a3f7b2e6', name: 'api-renamed.ts' },
         { mode: '100644', type: 'blob', hash: 'c2a6d9e3f7b1d4a8', name: 'Auth.tsx' },
         { mode: '100644', type: 'blob', hash: 'a9d3f6e2b8c4d1a7', name: 'Login.tsx' },
         { mode: '040000', type: 'tree', hash: 'abc123def456ghi7', name: 'utils' },
@@ -77,18 +96,8 @@ export const defaultRepo: MockData = {
       names: ['utils'],
       entries: [
         { mode: '100644', type: 'blob', hash: 'd5e2a8f3c7b4d9a1', name: 'README.md' },
-        { mode: '040000', type: 'tree', hash: 'fgh789ijk012lmn3', name: 'utils' },
       ],
       referencedBy: ['f1d4e8a2c9b6f3e7'],
-    },
-    {
-      hash: 'fgh789ijk012lmn3',
-      type: 'tree',
-      size: 96,
-      names: ['utils'],
-      entries: [
-      ],
-      referencedBy: ['abc123def456ghi7'],
     },
     {
       hash: 'c2a6d9e3f7b1d4a8',
