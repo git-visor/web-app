@@ -1,0 +1,183 @@
+{
+  "repositoryName": "File Editing Example",
+  "repositoryPath": "D:\\Education\\CS3281\\File Editing Example",
+  "exportDate": "2026-03-13T03:43:32.199Z",
+  "totalObjects": 8,
+  "objects": [
+    {
+      "hash": "26cf8a2c87dec6688715a0d93c12bb47c9cc4f86",
+      "type": "commit",
+      "size": 250,
+      "references": [
+        "c1328674bf3ffab6eb0091347f3c010f1aba8a95",
+        "b484979befacd4b9026cb9c3f5ba77d42f5fc16a"
+      ],
+      "referencedBy": [],
+      "diff": [
+        {
+          "status": "M",
+          "path": "File to Edit.txt",
+          "hash": "c702f89c8b311ce46458e26270c94493110f930e",
+          "content": "diff --git a/File to Edit.txt b/File to Edit.txt\nindex ea2e622..c702f89 100644\n--- a/File to Edit.txt\t\n+++ b/File to Edit.txt\t\n@@ -1 +1 @@\n-I will edit this file in later commits\n\\ No newline at end of file\n+I have edited this file\n\\ No newline at end of file\n"
+        }
+      ],
+      "parent": [
+        "b484979befacd4b9026cb9c3f5ba77d42f5fc16a"
+      ],
+      "tree": "c1328674bf3ffab6eb0091347f3c010f1aba8a95",
+      "author": "thegrimbee <gabriel.mario.antaputra@gmail.com> 1773373394 +0800",
+      "committer": "thegrimbee <gabriel.mario.antaputra@gmail.com> 1773373394 +0800",
+      "message": "edit file"
+    },
+    {
+      "hash": "431b91607eb357d2a141c527692e79dc1466089c",
+      "type": "blob",
+      "size": 30,
+      "references": [],
+      "referencedBy": [
+        "69d4df7f8e8919664b9ccaac439c844d30a769f6"
+      ],
+      "names": [
+        "Unedited File.txt"
+      ],
+      "content": "This file will remain the same"
+    },
+    {
+      "hash": "4917d768f3f09a100af8f24dd1f0c5fdfc0e294a",
+      "type": "tree",
+      "size": 82,
+      "references": [
+        "ea2e6226cbc544ed3f785f7a68b4749a4123847b",
+        "69d4df7f8e8919664b9ccaac439c844d30a769f6"
+      ],
+      "referencedBy": [
+        "b484979befacd4b9026cb9c3f5ba77d42f5fc16a"
+      ],
+      "names": [
+        "File Editing Example"
+      ],
+      "entries": [
+        {
+          "mode": "100644",
+          "name": "File to Edit.txt",
+          "hash": "ea2e6226cbc544ed3f785f7a68b4749a4123847b",
+          "type": "blob"
+        },
+        {
+          "mode": "40000",
+          "name": "Test Folder",
+          "hash": "69d4df7f8e8919664b9ccaac439c844d30a769f6",
+          "type": "tree"
+        }
+      ]
+    },
+    {
+      "hash": "69d4df7f8e8919664b9ccaac439c844d30a769f6",
+      "type": "tree",
+      "size": 45,
+      "references": [
+        "431b91607eb357d2a141c527692e79dc1466089c"
+      ],
+      "referencedBy": [
+        "4917d768f3f09a100af8f24dd1f0c5fdfc0e294a",
+        "c1328674bf3ffab6eb0091347f3c010f1aba8a95"
+      ],
+      "names": [
+        "Test Folder"
+      ],
+      "entries": [
+        {
+          "mode": "100644",
+          "name": "Unedited File.txt",
+          "hash": "431b91607eb357d2a141c527692e79dc1466089c",
+          "type": "blob"
+        }
+      ]
+    },
+    {
+      "hash": "b484979befacd4b9026cb9c3f5ba77d42f5fc16a",
+      "type": "commit",
+      "size": 207,
+      "references": [
+        "4917d768f3f09a100af8f24dd1f0c5fdfc0e294a"
+      ],
+      "referencedBy": [
+        "26cf8a2c87dec6688715a0d93c12bb47c9cc4f86"
+      ],
+      "diff": [
+        {
+          "status": "A",
+          "path": "File to Edit.txt",
+          "hash": "ea2e6226cbc544ed3f785f7a68b4749a4123847b",
+          "content": "diff --git a/File to Edit.txt b/File to Edit.txt\nnew file mode 100644\nindex 0000000..ea2e622\n--- /dev/null\n+++ b/File to Edit.txt\t\n@@ -0,0 +1 @@\n+I will edit this file in later commits\n\\ No newline at end of file\n"
+        },
+        {
+          "status": "A",
+          "path": "Test Folder/Unedited File.txt",
+          "hash": "431b91607eb357d2a141c527692e79dc1466089c",
+          "content": "diff --git a/Test Folder/Unedited File.txt b/Test Folder/Unedited File.txt\nnew file mode 100644\nindex 0000000..431b916\n--- /dev/null\n+++ b/Test Folder/Unedited File.txt\t\n@@ -0,0 +1 @@\n+This file will remain the same\n\\ No newline at end of file\n"
+        }
+      ],
+      "parent": [],
+      "tree": "4917d768f3f09a100af8f24dd1f0c5fdfc0e294a",
+      "author": "thegrimbee <gabriel.mario.antaputra@gmail.com> 1773373381 +0800",
+      "committer": "thegrimbee <gabriel.mario.antaputra@gmail.com> 1773373381 +0800",
+      "message": "initial commit"
+    },
+    {
+      "hash": "c1328674bf3ffab6eb0091347f3c010f1aba8a95",
+      "type": "tree",
+      "size": 82,
+      "references": [
+        "c702f89c8b311ce46458e26270c94493110f930e",
+        "69d4df7f8e8919664b9ccaac439c844d30a769f6"
+      ],
+      "referencedBy": [
+        "26cf8a2c87dec6688715a0d93c12bb47c9cc4f86"
+      ],
+      "names": [
+        "File Editing Example"
+      ],
+      "entries": [
+        {
+          "mode": "100644",
+          "name": "File to Edit.txt",
+          "hash": "c702f89c8b311ce46458e26270c94493110f930e",
+          "type": "blob"
+        },
+        {
+          "mode": "40000",
+          "name": "Test Folder",
+          "hash": "69d4df7f8e8919664b9ccaac439c844d30a769f6",
+          "type": "tree"
+        }
+      ]
+    },
+    {
+      "hash": "c702f89c8b311ce46458e26270c94493110f930e",
+      "type": "blob",
+      "size": 23,
+      "references": [],
+      "referencedBy": [
+        "c1328674bf3ffab6eb0091347f3c010f1aba8a95"
+      ],
+      "names": [
+        "File to Edit.txt"
+      ],
+      "content": "I have edited this file"
+    },
+    {
+      "hash": "ea2e6226cbc544ed3f785f7a68b4749a4123847b",
+      "type": "blob",
+      "size": 38,
+      "references": [],
+      "referencedBy": [
+        "4917d768f3f09a100af8f24dd1f0c5fdfc0e294a"
+      ],
+      "names": [
+        "File to Edit.txt"
+      ],
+      "content": "I will edit this file in later commits"
+    }
+  ]
+}

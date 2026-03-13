@@ -1,0 +1,141 @@
+{
+  "repositoryName": "File Deletion Example",
+  "repositoryPath": "D:\\Education\\CS3281\\File Deletion Example",
+  "exportDate": "2026-03-13T03:41:17.092Z",
+  "totalObjects": 6,
+  "objects": [
+    {
+      "hash": "0b10434f644aafa4894795ce0b68ee3bc4d1e349",
+      "type": "blob",
+      "size": 40,
+      "references": [],
+      "referencedBy": [
+        "fecd8d29fa77c7e42582650ea6cb3c476027dce0"
+      ],
+      "names": [
+        "File to Delete.txt"
+      ],
+      "content": "I will delete this file in later commits"
+    },
+    {
+      "hash": "6696d5ed606af77ed8dd76a53f7b167fac0425cc",
+      "type": "blob",
+      "size": 38,
+      "references": [],
+      "referencedBy": [
+        "cc1e5ffbfea919dcff06b0fa36e4cf7c622a4150",
+        "fecd8d29fa77c7e42582650ea6cb3c476027dce0"
+      ],
+      "names": [
+        "File to Keep.txt"
+      ],
+      "content": "I will keep this file in later commits"
+    },
+    {
+      "hash": "6af490fe662ff013681096c587ade9eff1cf445e",
+      "type": "commit",
+      "size": 207,
+      "references": [
+        "fecd8d29fa77c7e42582650ea6cb3c476027dce0"
+      ],
+      "referencedBy": [
+        "730c2d4c2b054424cb8485c9b222bbdec21d49c8"
+      ],
+      "diff": [
+        {
+          "status": "A",
+          "path": "File to Delete.txt",
+          "hash": "0b10434f644aafa4894795ce0b68ee3bc4d1e349",
+          "content": "diff --git a/File to Delete.txt b/File to Delete.txt\nnew file mode 100644\nindex 0000000..0b10434\n--- /dev/null\n+++ b/File to Delete.txt\t\n@@ -0,0 +1 @@\n+I will delete this file in later commits\n\\ No newline at end of file\n"
+        },
+        {
+          "status": "A",
+          "path": "File to Keep.txt",
+          "hash": "6696d5ed606af77ed8dd76a53f7b167fac0425cc",
+          "content": "diff --git a/File to Keep.txt b/File to Keep.txt\nnew file mode 100644\nindex 0000000..6696d5e\n--- /dev/null\n+++ b/File to Keep.txt\t\n@@ -0,0 +1 @@\n+I will keep this file in later commits\n\\ No newline at end of file\n"
+        }
+      ],
+      "parent": [],
+      "tree": "fecd8d29fa77c7e42582650ea6cb3c476027dce0",
+      "author": "thegrimbee <gabriel.mario.antaputra@gmail.com> 1773372103 +0800",
+      "committer": "thegrimbee <gabriel.mario.antaputra@gmail.com> 1773372103 +0800",
+      "message": "initial commit"
+    },
+    {
+      "hash": "730c2d4c2b054424cb8485c9b222bbdec21d49c8",
+      "type": "commit",
+      "size": 252,
+      "references": [
+        "cc1e5ffbfea919dcff06b0fa36e4cf7c622a4150",
+        "6af490fe662ff013681096c587ade9eff1cf445e"
+      ],
+      "referencedBy": [],
+      "diff": [
+        {
+          "status": "D",
+          "path": "File to Delete.txt",
+          "hash": "0000000000000000000000000000000000000000",
+          "content": "diff --git a/File to Delete.txt b/File to Delete.txt\ndeleted file mode 100644\nindex 0b10434..0000000\n--- a/File to Delete.txt\t\n+++ /dev/null\n@@ -1 +0,0 @@\n-I will delete this file in later commits\n\\ No newline at end of file\n"
+        }
+      ],
+      "parent": [
+        "6af490fe662ff013681096c587ade9eff1cf445e"
+      ],
+      "tree": "cc1e5ffbfea919dcff06b0fa36e4cf7c622a4150",
+      "author": "thegrimbee <gabriel.mario.antaputra@gmail.com> 1773373241 +0800",
+      "committer": "thegrimbee <gabriel.mario.antaputra@gmail.com> 1773373241 +0800",
+      "message": "delete file"
+    },
+    {
+      "hash": "cc1e5ffbfea919dcff06b0fa36e4cf7c622a4150",
+      "type": "tree",
+      "size": 44,
+      "references": [
+        "6696d5ed606af77ed8dd76a53f7b167fac0425cc"
+      ],
+      "referencedBy": [
+        "730c2d4c2b054424cb8485c9b222bbdec21d49c8"
+      ],
+      "names": [
+        "File Deletion Example"
+      ],
+      "entries": [
+        {
+          "mode": "100644",
+          "name": "File to Keep.txt",
+          "hash": "6696d5ed606af77ed8dd76a53f7b167fac0425cc",
+          "type": "blob"
+        }
+      ]
+    },
+    {
+      "hash": "fecd8d29fa77c7e42582650ea6cb3c476027dce0",
+      "type": "tree",
+      "size": 90,
+      "references": [
+        "0b10434f644aafa4894795ce0b68ee3bc4d1e349",
+        "6696d5ed606af77ed8dd76a53f7b167fac0425cc"
+      ],
+      "referencedBy": [
+        "6af490fe662ff013681096c587ade9eff1cf445e"
+      ],
+      "names": [
+        "File Deletion Example"
+      ],
+      "entries": [
+        {
+          "mode": "100644",
+          "name": "File to Delete.txt",
+          "hash": "0b10434f644aafa4894795ce0b68ee3bc4d1e349",
+          "type": "blob"
+        },
+        {
+          "mode": "100644",
+          "name": "File to Keep.txt",
+          "hash": "6696d5ed606af77ed8dd76a53f7b167fac0425cc",
+          "type": "blob"
+        }
+      ]
+    }
+  ]
+}

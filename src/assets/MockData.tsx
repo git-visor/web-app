@@ -1,16 +1,17 @@
-import type { GitObject, CommitObject, TreeObject, BlobObject, TagObject } from './ObjectDatabase'
-import { defaultRepo } from './MockDatas/DefaultRepo'
-import { deleteFileRepo } from './MockDatas/DeleteFileRepo'
-import { editFileRepo } from './MockDatas/EditFileRepo'
+import type { GitObject } from './ObjectDatabase'
+import FileDeletionExample from './MockDatas/File_Deletion_Example_git_objects.json'
+import FileEditExample from './MockDatas/File_Editing_Example_git_objects.json'
 
 export interface MockData {
-  name: string
+  repositoryName: string
+  repositoryPath: string
+  exportDate: string
+  totalObjects: number
   description?: string
-  objects: Array<CommitObject | TreeObject | BlobObject | GitObject | TagObject>
+  objects: GitObject[]
 }
 
 export const mockDataList: Array<MockData> = [
-  defaultRepo,
-  deleteFileRepo,
-  editFileRepo
+  FileDeletionExample as MockData,
+  FileEditExample as MockData,
 ]
