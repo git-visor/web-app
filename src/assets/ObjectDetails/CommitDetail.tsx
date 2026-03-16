@@ -10,7 +10,9 @@ interface CommitDetailProps {
 }
 
 export function CommitDetail({ commit, onSelectObject, getObjectByHash }: CommitDetailProps): JSX.Element {
-  const [expandedFiles, setExpandedFiles] = useState<Set<string>>(new Set())
+  const [expandedFiles, setExpandedFiles] = useState<Set<string>>(
+    () => new Set((commit.diff ?? []).map((change) => change.path))
+  )
   const toggleFileDiff = (filePath: string): void => {
     setExpandedFiles((prev) => {
       const newExpanded = new Set(prev)
@@ -89,7 +91,6 @@ export function CommitDetail({ commit, onSelectObject, getObjectByHash }: Commit
             <span className="text-xs text-gray-400">Timestamp:</span>
             <span className="text-xs text-gray-300">{new Date(Number(commit.timestamp)).toLocaleString()}</span>
           </div>
-
         </div>
 
         <div>

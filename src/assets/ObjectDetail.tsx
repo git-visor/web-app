@@ -25,10 +25,37 @@ export function ObjectDetail({
 
   return (
     <div className="p-6">
-      {object.type === 'commit' && CommitDetail({ commit: object as CommitObject, onSelectObject, getObjectByHash })}
-      {object.type === 'tree' && TreeDetail({ tree: object as TreeObject, onSelectObject, getObjectByHash })}
-      {object.type === 'blob' && BlobDetail({ blob: object as BlobObject, onSelectObject, getObjectByHash })}
-      {object.type === 'tag' && TagDetail({ tag: object as TagObject, onSelectObject })}
+      {object.type === 'commit' && (
+        <CommitDetail
+          key={object.hash}
+          commit={object as CommitObject}
+          onSelectObject={onSelectObject}
+          getObjectByHash={getObjectByHash}
+        />
+      )}
+      {object.type === 'tree' && (
+        <TreeDetail
+          key={object.hash}
+          tree={object as TreeObject}
+          onSelectObject={onSelectObject}
+          getObjectByHash={getObjectByHash}
+        />
+      )}
+      {object.type === 'blob' && (
+        <BlobDetail
+          key={object.hash}
+          blob={object as BlobObject}
+          onSelectObject={onSelectObject}
+          getObjectByHash={getObjectByHash}
+        />
+      )}
+      {object.type === 'tag' && (
+        <TagDetail
+          key={object.hash}
+          tag={object as TagObject}
+          onSelectObject={onSelectObject}
+        />
+      )}
     </div>
   )
 }
