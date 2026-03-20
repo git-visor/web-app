@@ -86,8 +86,8 @@ export function BlobDetail({
             <p className="text-xs text-gray-400 mb-2">This blob is referenced by these trees:</p>
             <div className="space-y-1">
               {blob.referencedBy.map((hash) => {
-                const refObj = getObjectByHash(hash) as TreeObject | undefined
-                if (!refObj) return null
+                const refObj = getObjectByHash(hash)
+                if (!refObj || refObj.type !== "tree") return null
                 const entry = (refObj as TreeObject).entries?.find((e) => e.hash === blob.hash)
                 return (
                   <button

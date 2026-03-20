@@ -173,10 +173,18 @@ export function CommitDetail({ commit, onSelectObject, getObjectByHash }: Commit
                         </button>
 
                         <button
-                          onClick={() => {
-                            if (change.hash && !change.hash.match(/^0+$/)) onSelectObject(change.hash)
-                          }}
-                          className="flex-1 flex items-center gap-2 p-2 bg-yellow-500/10 hover:bg-yellow-500/20 border border-yellow-500/30 rounded transition-colors"
+                          disabled={!(change.hash && !change.hash.match(/^0+$/))}
+                          onClick={
+                            change.hash && !change.hash.match(/^0+$/)
+                              ? () => onSelectObject(change.hash)
+                              : undefined
+                          }
+                          className={
+                            `flex-1 flex items-center gap-2 p-2 bg-yellow-500/10 border border-yellow-500/30 rounded transition-colors ` +
+                            (change.hash && !change.hash.match(/^0+$/)
+                              ? "hover:bg-yellow-500/20 cursor-pointer"
+                              : "opacity-50 cursor-default")
+                          }
                         >
                           <span className={`text-xs font-bold w-4 flex-shrink-0 ${getStatusColor(change.status)}`}>
                             {change.status}

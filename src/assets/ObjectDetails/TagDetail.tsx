@@ -1,5 +1,5 @@
 import type { JSX } from "react"
-import { Hash, Link, GitCommit, ArrowRight } from "lucide-react"
+import { Hash, Link, ArrowRight } from "lucide-react"
 import type { TagObject } from "../ObjectDatabase"
 
 interface TagDetailProps {
@@ -41,7 +41,7 @@ export function TagDetail({ tag, onSelectObject }: TagDetailProps): JSX.Element 
           onClick={() => onSelectObject(tag.objectHash)}
           className="flex items-center gap-2 p-2 bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 rounded transition-colors w-full"
         >
-          <GitCommit className="w-3 h-3 text-purple-400" />
+          <Link className="w-3 h-3 text-purple-400" />
           <code className="text-xs text-purple-400 font-mono flex-1 text-left">
             {tag.objectHash}
           </code>

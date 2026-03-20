@@ -58,7 +58,7 @@ export function TreeDetail({
             const entryObj = getObjectByHash(entry.hash)
             return (
               <button
-                key={entry.hash}
+                key={`${entry.mode}-${entry.name}-${entry.hash}`}
                 onClick={() => onSelectObject(entry.hash)}
                 className={`flex items-center gap-2 p-2 rounded transition-colors w-full ${entry.type === 'blob'
                     ? 'bg-yellow-500/10 hover:bg-yellow-500/20 border border-yellow-500/30'
