@@ -44,6 +44,7 @@ export function ObjectGraph({
   const LINE_WIDTH = 1.5 // Base line width for connections
   const ICON_SCALE = 0.7 // Scale for Lucide icons (1 = 24px, adjust if you want smaller/larger icons)
   const NODE_LABEL_SCALE = 0.6 // Scale for node labels relative to node radius
+  const COMMIT_LABEL_LEFT_GAP = 12 // Horizontal gap between commit node and its label
   const MAX_LABEL_LENGTH = 20 // Max characters for node labels before truncation
 
   // Icon Paths (SVG Data from Lucide)
@@ -514,16 +515,27 @@ export function ObjectGraph({
         ctx.stroke()
       }
       // Node Label (Short Hash)
-      ctx.fillStyle = '#9ca3af'
-      ctx.font = `${NODE_RADIUS * NODE_LABEL_SCALE}px monospace`
-      ctx.textAlign = 'center'
-      ctx.fillText(
+      const labelText =
         pos.label.length > MAX_LABEL_LENGTH
           ? pos.label.substring(0, MAX_LABEL_LENGTH) + '...'
-          : pos.label,
-        pos.x,
-        pos.y + NODE_RADIUS + 14
-      )
+          : pos.label
+
+      const isCommitNode = pos.type === 'commit'
+
+      ctx.fillStyle = '#9ca3af'
+      ctx.font = `${NODE_RADIUS * NODE_LABEL_SCALE}px monospace`
+      ctx.textAlign = isCommitNode ? 'right' : 'center'
+      ctx.textBaseline = isCommitNode ? 'middle' : 'alphabetic'
+
+      const labelX = isCommitNode
+        ? pos.x - NODE_RADIUS - COMMIT_LABEL_LEFT_GAP
+        : pos.x
+
+      const labelY = isCommitNode
+        ? pos.y
+        : pos.y + NODE_RADIUS + 14
+
+      ctx.fillText(labelText, labelX, labelY)
       // --- Draw Icon ---
       ctx.save()
       // Move to center of node
