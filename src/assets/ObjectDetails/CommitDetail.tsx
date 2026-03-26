@@ -1,6 +1,6 @@
 import type { JSX } from "react"
 import { FileText, Hash, FolderTree, ArrowRight, GitCommit, User, Calendar, FileDiff, ChevronDown, ChevronRight } from "lucide-react"
-import type { GitObject, BlobObject, TreeObject, CommitObject, TagObject } from "../ObjectDatabase"
+import type { GitObject, BlobObject, TreeObject, CommitObject, TagObject } from "../ObjectTypes"
 import { useState } from "react"
 
 interface CommitDetailProps {
