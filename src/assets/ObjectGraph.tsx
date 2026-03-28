@@ -7,7 +7,9 @@ interface ObjectGraphProps {
   objects: Array<GitObject | CommitObject | BlobObject | TreeObject | TagObject>
   selectedHash?: string
   onSelectObject: (hash: string) => void
+  visibilityMap: Map<string, boolean> // Add visibilityMap
 }
+
 
 interface NodePosition {
   x: number
@@ -21,7 +23,8 @@ interface NodePosition {
 export function ObjectGraph({
   objects,
   selectedHash,
-  onSelectObject
+  onSelectObject,
+  visibilityMap
 }: ObjectGraphProps): JSX.Element {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [panOffset, setPanOffset] = useState({ x: 50, y: 50 }) // Start with some padding
@@ -79,10 +82,6 @@ export function ObjectGraph({
       if (treeReachableCache.has(rootTreeHash)) {
         return treeReachableCache.get(rootTreeHash)!
       }
-      const cached = treeReachableCache.get(rootTreeHash)
-      if (cached) {
-        return cached
-      }
       const seen = new Set<string>()
       const queue: string[] = [rootTreeHash]
       let i = 0
@@ -113,7 +112,6 @@ export function ObjectGraph({
           }
         }
       }
-
       return seen
     }
 
@@ -272,19 +270,28 @@ export function ObjectGraph({
     return positionMap
   }, [objects])
   const nodePositions = useMemo(() => {
-    const merged = new Map(defaultPositions)
-    
+    const merged = new Map<string, NodePosition>()
+
     // Create a set of valid hashes for quick lookup
     const validHashes = new Set(defaultPositions.keys())
 
     dragOverrides.forEach((pos, hash) => {
-        // Only apply override if the object exists in the current dataset
-        if (validHashes.has(hash)) {
-            merged.set(hash, pos)
-        }
+      // Only apply override if the object exists in the current dataset and is visible
+      if (validHashes.has(hash) && visibilityMap.get(hash)) {
+        merged.set(hash, pos)
+      }
     })
+
+    // Filter default positions based on visibility
+    defaultPositions.forEach((pos, hash) => {
+      if (visibilityMap.get(hash)) {
+        merged.set(hash, pos)
+      }
+    })
+
     return merged
-  }, [defaultPositions, dragOverrides])
+  }, [defaultPositions, dragOverrides, visibilityMap])
+
 
   const relatedHashes = useMemo(() => {
     const set = new Set<string>()
@@ -412,8 +419,9 @@ export function ObjectGraph({
         const fromPos = nodePositions.get(commit.hash)
         const toPos = nodePositions.get(commit.tree)
 
-        if (fromPos && toPos) {
-          const isHighlighted = (relatedHashes.has(fromPos.hash) && relatedHashes.has(toPos.hash))
+        // Skip if either object is not visible
+        if (fromPos && toPos && visibilityMap.get(commit.hash) && visibilityMap.get(commit.tree)) {
+          const isHighlighted = relatedHashes.has(fromPos.hash) && relatedHashes.has(toPos.hash)
           drawConnection(
             { x: fromPos.x, y: fromPos.y },
             { x: toPos.x, y: toPos.y },
@@ -425,7 +433,12 @@ export function ObjectGraph({
         // Commit -> Parent Commit
         commit.parent?.forEach((pHash) => {
           const parentPos = nodePositions.get(pHash)
-          if (fromPos && parentPos) {
+          if (
+            fromPos &&
+            parentPos &&
+            visibilityMap.get(commit.hash) &&
+            visibilityMap.get(pHash)
+          ) {
             const isHighlighted = fromPos.hash === selectedHash || parentPos.hash === selectedHash
 
             // Draw vertical-ish arc for commit parent
@@ -439,26 +452,6 @@ export function ObjectGraph({
           }
         })
       })
-    
-    // Tag -> Target Object
-    objects
-      .filter((o) => o.type === 'tag')
-      .forEach((tagObj) => {
-        const tag = tagObj as TagObject
-        const fromPos = nodePositions.get(tag.hash)
-        const toPos = nodePositions.get(tag.objectHash)
-
-        if (fromPos && toPos) {
-          const isHighlighted = (relatedHashes.has(fromPos.hash) && relatedHashes.has(toPos.hash))
-          // Draw connection from Tag to Commit/Object
-          drawConnection(
-            { x: fromPos.x, y: fromPos.y },
-            { x: toPos.x, y: toPos.y },
-            'rgba(167, 139, 250, 0.5)', // purple tint
-            isHighlighted
-          )
-        }
-      })
 
     // Tree -> Entry (Tree or Blob)
     objects
@@ -470,8 +463,12 @@ export function ObjectGraph({
         if (fromPos && tree.entries) {
           tree.entries.forEach((entry) => {
             const toPos = nodePositions.get(entry.hash)
-            if (toPos) {
-              const isHighlighted = (relatedHashes.has(fromPos.hash) && relatedHashes.has(toPos.hash))
+            if (
+              toPos &&
+              visibilityMap.get(tree.hash) &&
+              visibilityMap.get(entry.hash)
+            ) {
+              const isHighlighted = relatedHashes.has(fromPos.hash) && relatedHashes.has(toPos.hash)
               drawConnection(
                 { x: fromPos.x, y: fromPos.y },
                 { x: toPos.x, y: toPos.y },
@@ -483,13 +480,41 @@ export function ObjectGraph({
         }
       })
 
+    // Tag -> Target Object
+    objects
+      .filter((o) => o.type === 'tag')
+      .forEach((tagObj) => {
+        const tag = tagObj as TagObject
+        const fromPos = nodePositions.get(tag.hash)
+        const toPos = nodePositions.get(tag.objectHash)
+
+        if (
+          fromPos &&
+          toPos &&
+          visibilityMap.get(tag.hash) &&
+          visibilityMap.get(tag.objectHash)
+        ) {
+          const isHighlighted = relatedHashes.has(fromPos.hash) && relatedHashes.has(toPos.hash)
+          drawConnection(
+            { x: fromPos.x, y: fromPos.y },
+            { x: toPos.x, y: toPos.y },
+            'rgba(167, 139, 250, 0.5)', // purple tint
+            isHighlighted
+          )
+        }
+      })
+
+
     // --- Draw Nodes ---
 
     // --- Draw Nodes ---
     nodePositions.forEach((pos) => {
+      // Skip rendering if the node is not visible
+      if (!visibilityMap.get(pos.hash)) return
+
       // Find the specific color for this node type
       let typeColor = '#a16207' // default yellow
-      
+
       if (pos.type === 'commit') {
         typeColor = '#60a5fa' // blue-400
       } else if (pos.type === 'tree') {
@@ -506,10 +531,10 @@ export function ObjectGraph({
       ctx.arc(pos.x, pos.y, NODE_RADIUS, 0, Math.PI * 2)
 
       // Make background transparent (or very dark gray for hit area visibility)
-      ctx.fillStyle = isSelected ? 'rgb(50, 50, 50)' : 'rgb(30, 30, 30)' 
+      ctx.fillStyle = isSelected ? 'rgb(50, 50, 50)' : 'rgb(30, 30, 30)'
       // Use the type color for the ring if selected, otherwise a subtle grey
-      ctx.strokeStyle = isSelected ? '#ffffff' : '#4b5563' 
-      
+      ctx.strokeStyle = isSelected ? '#ffffff' : '#4b5563'
+
       ctx.fill()
 
       if (isSelected) {
@@ -517,6 +542,7 @@ export function ObjectGraph({
         ctx.lineWidth = 2
         ctx.stroke()
       }
+
       // Node Label (commit message or object name)
       const labelText =
         pos.label.length > MAX_LABEL_LENGTH
@@ -567,6 +593,8 @@ export function ObjectGraph({
       }
       ctx.restore()
     })
+
+      
 
     // Draw Column Headers (Fixed relative to pan x, but moves with pan y? Or fully fixed?)
     // Let's make them move with the graph so they identify the columns
