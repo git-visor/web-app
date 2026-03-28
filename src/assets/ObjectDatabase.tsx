@@ -107,6 +107,7 @@ export function ObjectDatabase(): JSX.Element {
   }, [objects, branches, selectedBranch])
 
   const filteredObjects = useMemo(() => {
+    console.log(branchScopedObjects.filter((obj) => visibleTypes.includes(obj.type)))
     return branchScopedObjects.filter((obj) => visibleTypes.includes(obj.type))
   }, [branchScopedObjects, visibleTypes])
 
