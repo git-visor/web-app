@@ -49,7 +49,6 @@ export function ObjectDatabase(): JSX.Element {
   const selectedBranch = useAppSelector((state) => state.graph.currentBranch)
 
   const branchScopedObjects = useMemo(() => {
-    console.log(objects);
     if (!selectedBranch) return objects
 
     const selected = branches.find((b) => b.name === selectedBranch)
@@ -108,7 +107,6 @@ export function ObjectDatabase(): JSX.Element {
   }, [objects, branches, selectedBranch])
 
   const filteredObjects = useMemo(() => {
-    console.log(branchScopedObjects)
     return branchScopedObjects.filter((obj) => visibleTypes.includes(obj.type))
   }, [branchScopedObjects, visibleTypes])
 

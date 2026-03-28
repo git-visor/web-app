@@ -1,9 +1,10 @@
 import { ChevronDown } from 'lucide-react';
 import type { JSX } from 'react'
+import type { BranchInfo } from '../ObjectTypes'
 
 interface BranchSelectionProps {
   title: string;
-  branches: { name: string; commitHash: string; current: boolean }[];
+  branches: BranchInfo[];
   currentBranch: string;
   onSelectBranch: (branchName: string) => void;
 }
