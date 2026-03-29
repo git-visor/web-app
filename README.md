@@ -1,3 +1,7 @@
+# Git Visor (Web Version)
+
+A web app that provides a visual representation of how Git works under the hood.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
