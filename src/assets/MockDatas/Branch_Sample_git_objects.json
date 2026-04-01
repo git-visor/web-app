@@ -1,0 +1,219 @@
+{
+  "repositoryName": "Branch Sample",
+  "repositoryPath": "D:\\Education\\CS3281\\Branch Sample",
+  "exportDate": "2026-04-01T01:50:41.175Z",
+  "totalObjects": 9,
+  "branches": [
+    {
+      "name": "add-new-test",
+      "commitHash": "213f4f4583c6fa73ad25f137809d5c494c11d217",
+      "current": false
+    },
+    {
+      "name": "delete-test",
+      "commitHash": "5a7f4803b1821774896e222799a3d6a0bba3b8e6",
+      "current": false
+    },
+    {
+      "name": "main",
+      "commitHash": "22c3b608d43671acfce7a7c39baa84677af691c9",
+      "current": true
+    }
+  ],
+  "objects": [
+    {
+      "hash": "213f4f4583c6fa73ad25f137809d5c494c11d217",
+      "type": "commit",
+      "size": 253,
+      "references": [
+        "c5bd04af1c3bc2dc62d7c09370d2ebe7f1cd8891",
+        "71b88e1658a14ece2a62d348e045c2254d5b3cba"
+      ],
+      "referencedBy": [
+        "22c3b608d43671acfce7a7c39baa84677af691c9"
+      ],
+      "parent": [
+        "71b88e1658a14ece2a62d348e045c2254d5b3cba"
+      ],
+      "timestamp": 1775008125000,
+      "tree": "c5bd04af1c3bc2dc62d7c09370d2ebe7f1cd8891",
+      "author": "random_user <random_person@gmail.com>",
+      "committer": "random_user <random_person@gmail.com>",
+      "message": "Add new test",
+      "diff": [
+        {
+          "status": "A",
+          "path": "test2.txt",
+          "hash": "7cde4952f0676c1dddd4a7fbf3d62b39b9ca118e",
+          "content": "diff --git a/test2.txt b/test2.txt\nnew file mode 100644\nindex 0000000..7cde495\n--- /dev/null\n+++ b/test2.txt\n@@ -0,0 +1 @@\n+New test file\n\\ No newline at end of file\n"
+        }
+      ]
+    },
+    {
+      "hash": "22c3b608d43671acfce7a7c39baa84677af691c9",
+      "type": "commit",
+      "size": 316,
+      "references": [
+        "c5bd04af1c3bc2dc62d7c09370d2ebe7f1cd8891",
+        "71b88e1658a14ece2a62d348e045c2254d5b3cba",
+        "213f4f4583c6fa73ad25f137809d5c494c11d217"
+      ],
+      "referencedBy": [],
+      "parent": [
+        "71b88e1658a14ece2a62d348e045c2254d5b3cba",
+        "213f4f4583c6fa73ad25f137809d5c494c11d217"
+      ],
+      "timestamp": 1775008152000,
+      "tree": "c5bd04af1c3bc2dc62d7c09370d2ebe7f1cd8891",
+      "author": "random_user <random_person@gmail.com>",
+      "committer": "random_user <random_person@gmail.com>",
+      "message": "Merge branch 'add-new-test'",
+      "diff": []
+    },
+    {
+      "hash": "2920c064cd95a4f4651f1d152ce7198caa6c36e3",
+      "type": "blob",
+      "size": 17,
+      "references": [],
+      "referencedBy": [
+        "3e603641dc5ccb68cbdbf58365cb44bcf3efa7b5",
+        "c5bd04af1c3bc2dc62d7c09370d2ebe7f1cd8891"
+      ],
+      "names": [
+        "test.txt"
+      ],
+      "content": "Initial test file"
+    },
+    {
+      "hash": "3e603641dc5ccb68cbdbf58365cb44bcf3efa7b5",
+      "type": "tree",
+      "size": 36,
+      "references": [
+        "2920c064cd95a4f4651f1d152ce7198caa6c36e3"
+      ],
+      "referencedBy": [
+        "71b88e1658a14ece2a62d348e045c2254d5b3cba"
+      ],
+      "names": [
+        "Branch Sample"
+      ],
+      "entries": [
+        {
+          "mode": "100644",
+          "name": "test.txt",
+          "hash": "2920c064cd95a4f4651f1d152ce7198caa6c36e3",
+          "type": "blob"
+        }
+      ]
+    },
+    {
+      "hash": "4b825dc642cb6eb9a060e54bf8d69288fbee4904",
+      "type": "tree",
+      "size": 0,
+      "references": [],
+      "referencedBy": [
+        "5a7f4803b1821774896e222799a3d6a0bba3b8e6"
+      ],
+      "names": [
+        "Branch Sample"
+      ],
+      "entries": []
+    },
+    {
+      "hash": "5a7f4803b1821774896e222799a3d6a0bba3b8e6",
+      "type": "commit",
+      "size": 252,
+      "references": [
+        "4b825dc642cb6eb9a060e54bf8d69288fbee4904",
+        "71b88e1658a14ece2a62d348e045c2254d5b3cba"
+      ],
+      "referencedBy": [],
+      "parent": [
+        "71b88e1658a14ece2a62d348e045c2254d5b3cba"
+      ],
+      "timestamp": 1775008079000,
+      "tree": "4b825dc642cb6eb9a060e54bf8d69288fbee4904",
+      "author": "random_user <random_person@gmail.com>",
+      "committer": "random_user <random_person@gmail.com>",
+      "message": "Delete test",
+      "diff": [
+        {
+          "status": "D",
+          "path": "test.txt",
+          "hash": "0000000000000000000000000000000000000000",
+          "content": "diff --git a/test.txt b/test.txt\ndeleted file mode 100644\nindex 2920c06..0000000\n--- a/test.txt\n+++ /dev/null\n@@ -1 +0,0 @@\n-Initial test file\n\\ No newline at end of file\n"
+        }
+      ]
+    },
+    {
+      "hash": "71b88e1658a14ece2a62d348e045c2254d5b3cba",
+      "type": "commit",
+      "size": 201,
+      "references": [
+        "3e603641dc5ccb68cbdbf58365cb44bcf3efa7b5"
+      ],
+      "referencedBy": [
+        "213f4f4583c6fa73ad25f137809d5c494c11d217",
+        "22c3b608d43671acfce7a7c39baa84677af691c9",
+        "5a7f4803b1821774896e222799a3d6a0bba3b8e6"
+      ],
+      "parent": [],
+      "timestamp": 1775008019000,
+      "tree": "3e603641dc5ccb68cbdbf58365cb44bcf3efa7b5",
+      "author": "random_user <random_person@gmail.com>",
+      "committer": "random_user <random_person@gmail.com>",
+      "message": "Add test",
+      "diff": [
+        {
+          "status": "A",
+          "path": "test.txt",
+          "hash": "2920c064cd95a4f4651f1d152ce7198caa6c36e3",
+          "content": "diff --git a/test.txt b/test.txt\nnew file mode 100644\nindex 0000000..2920c06\n--- /dev/null\n+++ b/test.txt\n@@ -0,0 +1 @@\n+Initial test file\n\\ No newline at end of file\n"
+        }
+      ]
+    },
+    {
+      "hash": "7cde4952f0676c1dddd4a7fbf3d62b39b9ca118e",
+      "type": "blob",
+      "size": 13,
+      "references": [],
+      "referencedBy": [
+        "c5bd04af1c3bc2dc62d7c09370d2ebe7f1cd8891"
+      ],
+      "names": [
+        "test2.txt"
+      ],
+      "content": "New test file"
+    },
+    {
+      "hash": "c5bd04af1c3bc2dc62d7c09370d2ebe7f1cd8891",
+      "type": "tree",
+      "size": 73,
+      "references": [
+        "2920c064cd95a4f4651f1d152ce7198caa6c36e3",
+        "7cde4952f0676c1dddd4a7fbf3d62b39b9ca118e"
+      ],
+      "referencedBy": [
+        "213f4f4583c6fa73ad25f137809d5c494c11d217",
+        "22c3b608d43671acfce7a7c39baa84677af691c9"
+      ],
+      "names": [
+        "Branch Sample"
+      ],
+      "entries": [
+        {
+          "mode": "100644",
+          "name": "test.txt",
+          "hash": "2920c064cd95a4f4651f1d152ce7198caa6c36e3",
+          "type": "blob"
+        },
+        {
+          "mode": "100644",
+          "name": "test2.txt",
+          "hash": "7cde4952f0676c1dddd4a7fbf3d62b39b9ca118e",
+          "type": "blob"
+        }
+      ]
+    }
+  ]
+}

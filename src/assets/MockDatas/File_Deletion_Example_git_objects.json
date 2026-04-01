@@ -51,8 +51,8 @@
       "parent": [],
       "timestamp": 1773372103000,
       "tree": "fecd8d29fa77c7e42582650ea6cb3c476027dce0",
-      "author": "thegrimbee <gabriel.mario.antaputra@gmail.com>",
-      "committer": "thegrimbee <gabriel.mario.antaputra@gmail.com>",
+      "author": "random_user <random_person@gmail.com>",
+      "committer": "random_user <random_person@gmail.com>",
       "message": "initial commit",
       "diff": [
         {
@@ -83,8 +83,8 @@
       ],
       "timestamp": 1773373241000,
       "tree": "cc1e5ffbfea919dcff06b0fa36e4cf7c622a4150",
-      "author": "thegrimbee <gabriel.mario.antaputra@gmail.com>",
-      "committer": "thegrimbee <gabriel.mario.antaputra@gmail.com>",
+      "author": "random_user <random_person@gmail.com>",
+      "committer": "random_user <random_person@gmail.com>",
       "message": "delete file",
       "diff": [
         {
