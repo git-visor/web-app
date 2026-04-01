@@ -1,6 +1,6 @@
 import FileDeletionExample from './MockDatas/File_Deletion_Example_git_objects.json'
 import FileEditExample from './MockDatas/File_Editing_Example_git_objects.json'
-import BranchExample from './MockDatas/branch-sample_git_objects.json'
+import BranchExample from './MockDatas/Branch_Sample_git_objects.json'
 import type { RepositoryData } from './ObjectTypes'
 
 
