@@ -1,4 +1,5 @@
 import type { JSX } from 'react'
+import { AppButton } from '../utils/buttons'
 
 interface CustomUrlInputProps {
   title: string
@@ -32,13 +33,13 @@ export function CustomUrlInput({
             className="flex-1 bg-[#252526] border border-gray-700 text-gray-300 text-xs rounded px-2 py-1.5 focus:outline-none focus:border-blue-500/50"
             onKeyDown={(e) => e.key === 'Enter' && onSubmit()}
           />
-          <button
+          <AppButton
             onClick={onSubmit}
             disabled={isLoading}
             className="bg-blue-600 hover:bg-blue-500 text-white text-xs px-3 py-1.5 rounded disabled:opacity-50"
           >
             Load
-          </button>
+          </AppButton>
         </div>
       </div>
       {error && (
