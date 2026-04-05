@@ -1,5 +1,6 @@
 import type { JSX } from 'react'
 import { Check } from 'lucide-react'
+import { AppButton } from '../utils/buttons'
 
 interface FilterObjectsProps {
   title: string
@@ -17,7 +18,7 @@ export function FilterObjects({ title, objectCounts, isTypeVisible, toggleVisibl
       </h3>
       <div className="flex flex-wrap gap-2">
         {['commit', 'tree', 'blob', 'tag'].map((type) => (
-          <button
+          <AppButton
             key={type}
             onClick={() => {
               toggleVisibleType(type);
@@ -37,7 +38,7 @@ export function FilterObjects({ title, objectCounts, isTypeVisible, toggleVisibl
             <span className="opacity-50 ml-1 text-[10px] bg-black/20 px-1 rounded-full">
               {objectCounts[type] || 0}
             </span>
-          </button>
+          </AppButton>
         ))}
       </div>
     </div>

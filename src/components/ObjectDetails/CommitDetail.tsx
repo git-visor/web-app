@@ -2,6 +2,7 @@ import type { JSX } from "react"
 import { FileText, Hash, FolderTree, ArrowRight, GitCommit, User, Calendar, FileDiff, ChevronDown, ChevronRight } from "lucide-react"
 import type { GitObject, BlobObject, TreeObject, CommitObject, TagObject } from "../ObjectTypes"
 import { useState } from "react"
+import { AppButton } from '../utils/buttons'
 
 interface CommitDetailProps {
   commit: CommitObject
@@ -109,7 +110,7 @@ export function CommitDetail({ commit, onSelectObject, getObjectByHash }: Commit
         </div>
         <div className="bg-[#252526] rounded p-3">
           <p className="text-xs text-gray-400 mb-2">This commit points to a tree object:</p>
-          <button
+          <AppButton
             onClick={() => onSelectObject(commit.tree)}
             className="flex items-center gap-2 p-2 bg-green-500/10 hover:bg-green-500/20 border border-green-500/30 rounded transition-colors w-full"
           >
@@ -118,7 +119,7 @@ export function CommitDetail({ commit, onSelectObject, getObjectByHash }: Commit
               {commit.tree}
             </code>
             <ArrowRight className="w-3 h-3 text-green-400" />
-          </button>
+          </AppButton>
         </div>
       </div>
 
@@ -133,7 +134,7 @@ export function CommitDetail({ commit, onSelectObject, getObjectByHash }: Commit
             {parentObjs.map(
               (parent) =>
                 parent && (
-                  <button
+                  <AppButton
                     key={parent.hash}
                     onClick={() => onSelectObject(parent.hash)}
                     className="flex items-center gap-2 p-2 bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/30 rounded transition-colors w-full"
@@ -143,7 +144,7 @@ export function CommitDetail({ commit, onSelectObject, getObjectByHash }: Commit
                       {parent.hash}
                     </code>
                     <ArrowRight className="w-3 h-3 text-blue-400" />
-                  </button>
+                  </AppButton>
                 )
             )}
           </div>
@@ -165,14 +166,14 @@ export function CommitDetail({ commit, onSelectObject, getObjectByHash }: Commit
                     <div key={idx} className="flex flex-col">
                       {/* File Change Area */}
                       <div className="flex items-center gap-2">
-                        <button
+                        <AppButton
                           onClick={() => toggleFileDiff(change.path)}
                           className="p-1 hover:bg-white/10 rounded cursor-pointer text-gray-400"
                         >
                           {isExpanded ? <ChevronDown className="w-3 h-3" /> : <ChevronRight className="w-3 h-3" />}
-                        </button>
+                        </AppButton>
 
-                        <button
+                        <AppButton
                           disabled={!(change.hash && !change.hash.match(/^0+$/))}
                           onClick={
                             change.hash && !change.hash.match(/^0+$/)
@@ -192,7 +193,7 @@ export function CommitDetail({ commit, onSelectObject, getObjectByHash }: Commit
                           <code className="text-xs text-yellow-300 font-mono flex-1 text-left truncate">
                             {change.path}
                           </code>
-                        </button>
+                        </AppButton>
                       </div>
 
                       {/* Render Diff Area */}
