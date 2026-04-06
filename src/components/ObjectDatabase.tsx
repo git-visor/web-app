@@ -36,14 +36,6 @@ export function ObjectDatabase(): JSX.Element {
     const dataset = availableDatasets[currentMockIndex] || availableDatasets[0]
     return dataset.objects as GitObject[]
   }, [currentMockIndex, availableDatasets])
-
-  const objectCounts = objects.reduce(
-    (acc, obj) => {
-      acc[obj.type] = (acc[obj.type] || 0) + 1
-      return acc
-    },
-    {} as Record<string, number>
-  )
   
   const branches = useAppSelector((state) => state.graph.branches)
   const selectedBranch = useAppSelector((state) => state.graph.currentBranch)
@@ -113,6 +105,13 @@ export function ObjectDatabase(): JSX.Element {
     }
     return map
   }, [branchScopedObjects, visibleTypes])
+
+  const objectCounts = useMemo(() => {
+    return branchScopedObjects.reduce((acc, obj) => {
+      acc[obj.type] = (acc[obj.type] || 0) + 1
+      return acc
+    }, {} as Record<string, number>)
+  }, [branchScopedObjects])
 
   // Handle loading and error states
   if (isLoading) {
