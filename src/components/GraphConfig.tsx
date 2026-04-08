@@ -143,8 +143,11 @@ export function GraphConfig({ objectCounts }: GraphConfigProps): JSX.Element {
   useEffect(() => {
     if (!customData) return;
     if (availableDatasets.length === 0) return;
-    dispatch(setCurrentMockIndex(availableDatasets.length - 1));
-  }, [customData, availableDatasets.length, dispatch]);
+    const customDataIndex = availableDatasets.indexOf(customData);
+    if (customDataIndex === -1) return;
+    if (currentMockIndex === customDataIndex) return;
+    dispatch(setCurrentMockIndex(customDataIndex));
+  }, [customData, availableDatasets, currentMockIndex, dispatch]);
 
   // handle initialisation
   useEffect(() => {
