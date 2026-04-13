@@ -38,7 +38,7 @@ export function ObjectGraph({
 
   // Constants for layout
   const NODE_RADIUS = 20
-  const ROW_HEIGHT = 70 // Fixed height per node -> ensures spacing
+  const ROW_HEIGHT = 60 // Fixed height per node -> ensures spacing
   const COL_WIDTH_TAG = 50 // New column for tags
   const COL_WIDTH_COMMIT = 170 // Shifted right to make room for tags
   const COL_START_OBJECTS = 300 // Shifted right
@@ -52,6 +52,7 @@ export function ObjectGraph({
   const NODE_LABEL_VERTICAL_GAP = 14 // Vertical gap between node and label for non-commit nodes
   const COMMIT_LABEL_LEFT_GAP = 12 // Horizontal gap between commit node and its label
   const MAX_LABEL_LENGTH = 20 // Max characters for node labels before truncation
+  const INTER_COMMIT_ROW_GAP = 0.4 // Extra empty rows between different commit groups
 
   // Icon Paths (SVG Data from Lucide)
   const ICON_PATHS = useMemo(() => ({
@@ -281,7 +282,8 @@ export function ObjectGraph({
       }
 
       const reservedHeight = Math.max(1, lastUsedRow - commitRow + 1)
-      nextCommitStartRow += reservedHeight
+      const isLastCommit = i === commits.length - 1
+      nextCommitStartRow += reservedHeight + (isLastCommit ? 0 : INTER_COMMIT_ROW_GAP)
     }
 
     const tags = objects.filter((o) => o.type === 'tag') as TagObject[]
