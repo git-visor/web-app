@@ -209,7 +209,7 @@ export function ObjectGraph({
     }
 
     const occupyRow = (depth: number, row: number): void => {
-    const m = getDepthMap(depth)
+      const m = getDepthMap(depth)
       m.set(row, findNextFree(depth, row + 1))
     }
 
