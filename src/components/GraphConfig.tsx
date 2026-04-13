@@ -39,6 +39,7 @@ export function GraphConfig({ objectCounts }: GraphConfigProps): JSX.Element {
   const currentBranch = useAppSelector((state) => state.graph.currentBranch);
   const branches = useAppSelector((state) => state.graph.branches);
   const isFirstLoad = useRef(true);
+  const lastAutoSelectedCustomData = useRef<unknown>(null);
   
   const handleBranchChange = (branchName: string) => {
     dispatch(setCurrentBranch(branchName));
@@ -143,8 +144,10 @@ export function GraphConfig({ objectCounts }: GraphConfigProps): JSX.Element {
   useEffect(() => {
     if (!customData) return;
     if (availableDatasets.length === 0) return;
+    if (lastAutoSelectedCustomData.current === customData) return;
     const customDataIndex = availableDatasets.indexOf(customData);
     if (customDataIndex === -1) return;
+    lastAutoSelectedCustomData.current = customData;
     if (currentMockIndex === customDataIndex) return;
     dispatch(setCurrentMockIndex(customDataIndex));
   }, [customData, availableDatasets, currentMockIndex, dispatch]);
