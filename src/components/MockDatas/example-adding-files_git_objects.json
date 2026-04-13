@@ -1,0 +1,463 @@
+{
+  "repositoryName": "File Adding Example",
+  "repositoryPath": "D:\\Education\\CS3281\\example-adding-files",
+  "exportDate": "2026-04-13T13:50:32.987Z",
+  "totalObjects": 18,
+  "branches": [
+    {
+      "name": "main",
+      "commitHash": "8ccaf82114d82c80a5be457252be582ba3cae5e7",
+      "current": true
+    }
+  ],
+  "objects": [
+    {
+      "hash": "8ccaf82114d82c80a5be457252be582ba3cae5e7",
+      "type": "commit",
+      "size": 272,
+      "references": [
+        "2b2f57de780d3cceb57c8275e5ac3fe1aba9c5f7",
+        "68426cc558ed290b0381c4b5618283c29aaa0538"
+      ],
+      "referencedBy": [],
+      "parent": [
+        "68426cc558ed290b0381c4b5618283c29aaa0538"
+      ],
+      "timestamp": 1776008663000,
+      "tree": "2b2f57de780d3cceb57c8275e5ac3fe1aba9c5f7",
+      "author": "damithc <1673303+damithc@users.noreply.github.com>",
+      "committer": "damithc <1673303+damithc@users.noreply.github.com>",
+      "message": "Add tools/carpentry.txt",
+      "diff": [
+        {
+          "status": "A",
+          "path": "tools/carpentry.txt",
+          "hash": "4a03d327634f327bfdf65c19dd5a0c7afa1420fd",
+          "content": "diff --git a/tools/carpentry.txt b/tools/carpentry.txt\nnew file mode 100644\nindex 0000000..4a03d32\n--- /dev/null\n+++ b/tools/carpentry.txt\n@@ -0,0 +1,3 @@\n+hammer\n+saw\n+screw driver\n"
+        }
+      ]
+    },
+    {
+      "hash": "68426cc558ed290b0381c4b5618283c29aaa0538",
+      "type": "commit",
+      "size": 268,
+      "references": [
+        "8976f449fe0e80e3d0f8348c4df0a6896063b07a",
+        "7188dacf337625d6052ce29a54f6be8b9bee38e9"
+      ],
+      "referencedBy": [
+        "8ccaf82114d82c80a5be457252be582ba3cae5e7"
+      ],
+      "parent": [
+        "7188dacf337625d6052ce29a54f6be8b9bee38e9"
+      ],
+      "timestamp": 1776007749000,
+      "tree": "8976f449fe0e80e3d0f8348c4df0a6896063b07a",
+      "author": "damithc <1673303+damithc@users.noreply.github.com>",
+      "committer": "damithc <1673303+damithc@users.noreply.github.com>",
+      "message": "Add food/drinks.txt",
+      "diff": [
+        {
+          "status": "A",
+          "path": "food/drinks.txt",
+          "hash": "8fc016ba66033e092cae1bf83caa68108cbef3b0",
+          "content": "diff --git a/food/drinks.txt b/food/drinks.txt\nnew file mode 100644\nindex 0000000..8fc016b\n--- /dev/null\n+++ b/food/drinks.txt\n@@ -0,0 +1,3 @@\n+tea\n+milk\n+water\n"
+        }
+      ]
+    },
+    {
+      "hash": "7188dacf337625d6052ce29a54f6be8b9bee38e9",
+      "type": "commit",
+      "size": 268,
+      "references": [
+        "29cfb797d8b739dc603c5118383409ec79cfd29b",
+        "31d97915e89e4d7d6442f120a05c1e066d31777a"
+      ],
+      "referencedBy": [
+        "68426cc558ed290b0381c4b5618283c29aaa0538"
+      ],
+      "parent": [
+        "31d97915e89e4d7d6442f120a05c1e066d31777a"
+      ],
+      "timestamp": 1776007086000,
+      "tree": "29cfb797d8b739dc603c5118383409ec79cfd29b",
+      "author": "damithc <1673303+damithc@users.noreply.github.com>",
+      "committer": "damithc <1673303+damithc@users.noreply.github.com>",
+      "message": "Add food/fruits.txt",
+      "diff": [
+        {
+          "status": "A",
+          "path": "food/fruits.txt",
+          "hash": "4a772685675a52de113df61f6c22360c2c6b9436",
+          "content": "diff --git a/food/fruits.txt b/food/fruits.txt\nnew file mode 100644\nindex 0000000..4a77268\n--- /dev/null\n+++ b/food/fruits.txt\n@@ -0,0 +1,2 @@\n+apple\n+banana\n"
+        }
+      ]
+    },
+    {
+      "hash": "31d97915e89e4d7d6442f120a05c1e066d31777a",
+      "type": "commit",
+      "size": 267,
+      "references": [
+        "d25784a5bc7e554a391e848b8b83e8c934b6a251",
+        "d7f61bc940145cd60bc2dcbe5cde59d3e496da32"
+      ],
+      "referencedBy": [
+        "7188dacf337625d6052ce29a54f6be8b9bee38e9"
+      ],
+      "parent": [
+        "d7f61bc940145cd60bc2dcbe5cde59d3e496da32"
+      ],
+      "timestamp": 1776006882000,
+      "tree": "d25784a5bc7e554a391e848b8b83e8c934b6a251",
+      "author": "damithc <1673303+damithc@users.noreply.github.com>",
+      "committer": "damithc <1673303+damithc@users.noreply.github.com>",
+      "message": "Add misc-items.txt",
+      "diff": [
+        {
+          "status": "A",
+          "path": "misc-items.txt",
+          "hash": "79a781cb81cb4803d59f786315468a9f51a0d2e7",
+          "content": "diff --git a/misc-items.txt b/misc-items.txt\nnew file mode 100644\nindex 0000000..79a781c\n--- /dev/null\n+++ b/misc-items.txt\n@@ -0,0 +1,3 @@\n+pen\n+paper\n+table\n"
+        }
+      ]
+    },
+    {
+      "hash": "d7f61bc940145cd60bc2dcbe5cde59d3e496da32",
+      "type": "commit",
+      "size": 214,
+      "references": [
+        "4b65abcddd969f85c4fe16243acf00e3aa35b0d2"
+      ],
+      "referencedBy": [
+        "31d97915e89e4d7d6442f120a05c1e066d31777a"
+      ],
+      "parent": [],
+      "timestamp": 1776006498000,
+      "tree": "4b65abcddd969f85c4fe16243acf00e3aa35b0d2",
+      "author": "damithc <1673303+damithc@users.noreply.github.com>",
+      "committer": "damithc <1673303+damithc@users.noreply.github.com>",
+      "message": "Add README.md",
+      "diff": [
+        {
+          "status": "A",
+          "path": "README.md",
+          "hash": "351a8f3b05db4025684d6acfd169a0301faf5e3c",
+          "content": "diff --git a/README.md b/README.md\nnew file mode 100644\nindex 0000000..351a8f3\n--- /dev/null\n+++ b/README.md\n@@ -0,0 +1,2 @@\n+This repo keeps track of items in a store\n+\n"
+        }
+      ]
+    },
+    {
+      "hash": "2b2f57de780d3cceb57c8275e5ac3fe1aba9c5f7",
+      "type": "tree",
+      "size": 142,
+      "references": [
+        "351a8f3b05db4025684d6acfd169a0301faf5e3c",
+        "568c309986d153c2e02461d3da1d983f38f46173",
+        "79a781cb81cb4803d59f786315468a9f51a0d2e7",
+        "3b6bb9ed9c3094a832f0700be6414a059db6ac19"
+      ],
+      "referencedBy": [
+        "8ccaf82114d82c80a5be457252be582ba3cae5e7"
+      ],
+      "names": [
+        "example-adding-files"
+      ],
+      "entries": [
+        {
+          "mode": "100644",
+          "name": "README.md",
+          "hash": "351a8f3b05db4025684d6acfd169a0301faf5e3c",
+          "type": "blob"
+        },
+        {
+          "mode": "40000",
+          "name": "food",
+          "hash": "568c309986d153c2e02461d3da1d983f38f46173",
+          "type": "tree"
+        },
+        {
+          "mode": "100644",
+          "name": "misc-items.txt",
+          "hash": "79a781cb81cb4803d59f786315468a9f51a0d2e7",
+          "type": "blob"
+        },
+        {
+          "mode": "40000",
+          "name": "tools",
+          "hash": "3b6bb9ed9c3094a832f0700be6414a059db6ac19",
+          "type": "tree"
+        }
+      ]
+    },
+    {
+      "hash": "351a8f3b05db4025684d6acfd169a0301faf5e3c",
+      "type": "blob",
+      "size": 43,
+      "references": [],
+      "referencedBy": [
+        "2b2f57de780d3cceb57c8275e5ac3fe1aba9c5f7",
+        "8976f449fe0e80e3d0f8348c4df0a6896063b07a",
+        "29cfb797d8b739dc603c5118383409ec79cfd29b",
+        "d25784a5bc7e554a391e848b8b83e8c934b6a251",
+        "4b65abcddd969f85c4fe16243acf00e3aa35b0d2"
+      ],
+      "names": [
+        "README.md"
+      ],
+      "content": "This repo keeps track of items in a store\n\n"
+    },
+    {
+      "hash": "568c309986d153c2e02461d3da1d983f38f46173",
+      "type": "tree",
+      "size": 76,
+      "references": [
+        "8fc016ba66033e092cae1bf83caa68108cbef3b0",
+        "4a772685675a52de113df61f6c22360c2c6b9436"
+      ],
+      "referencedBy": [
+        "2b2f57de780d3cceb57c8275e5ac3fe1aba9c5f7",
+        "8976f449fe0e80e3d0f8348c4df0a6896063b07a"
+      ],
+      "names": [
+        "food"
+      ],
+      "entries": [
+        {
+          "mode": "100644",
+          "name": "drinks.txt",
+          "hash": "8fc016ba66033e092cae1bf83caa68108cbef3b0",
+          "type": "blob"
+        },
+        {
+          "mode": "100644",
+          "name": "fruits.txt",
+          "hash": "4a772685675a52de113df61f6c22360c2c6b9436",
+          "type": "blob"
+        }
+      ]
+    },
+    {
+      "hash": "8fc016ba66033e092cae1bf83caa68108cbef3b0",
+      "type": "blob",
+      "size": 15,
+      "references": [],
+      "referencedBy": [
+        "568c309986d153c2e02461d3da1d983f38f46173"
+      ],
+      "names": [
+        "drinks.txt"
+      ],
+      "content": "tea\nmilk\nwater\n"
+    },
+    {
+      "hash": "4a772685675a52de113df61f6c22360c2c6b9436",
+      "type": "blob",
+      "size": 13,
+      "references": [],
+      "referencedBy": [
+        "568c309986d153c2e02461d3da1d983f38f46173",
+        "3723a2c4e53cab6f81a685c1316897b3132e52af"
+      ],
+      "names": [
+        "fruits.txt"
+      ],
+      "content": "apple\nbanana\n"
+    },
+    {
+      "hash": "79a781cb81cb4803d59f786315468a9f51a0d2e7",
+      "type": "blob",
+      "size": 16,
+      "references": [],
+      "referencedBy": [
+        "2b2f57de780d3cceb57c8275e5ac3fe1aba9c5f7",
+        "8976f449fe0e80e3d0f8348c4df0a6896063b07a",
+        "29cfb797d8b739dc603c5118383409ec79cfd29b",
+        "d25784a5bc7e554a391e848b8b83e8c934b6a251"
+      ],
+      "names": [
+        "misc-items.txt"
+      ],
+      "content": "pen\npaper\ntable\n"
+    },
+    {
+      "hash": "3b6bb9ed9c3094a832f0700be6414a059db6ac19",
+      "type": "tree",
+      "size": 41,
+      "references": [
+        "4a03d327634f327bfdf65c19dd5a0c7afa1420fd"
+      ],
+      "referencedBy": [
+        "2b2f57de780d3cceb57c8275e5ac3fe1aba9c5f7"
+      ],
+      "names": [
+        "tools"
+      ],
+      "entries": [
+        {
+          "mode": "100644",
+          "name": "carpentry.txt",
+          "hash": "4a03d327634f327bfdf65c19dd5a0c7afa1420fd",
+          "type": "blob"
+        }
+      ]
+    },
+    {
+      "hash": "4a03d327634f327bfdf65c19dd5a0c7afa1420fd",
+      "type": "blob",
+      "size": 24,
+      "references": [],
+      "referencedBy": [
+        "3b6bb9ed9c3094a832f0700be6414a059db6ac19"
+      ],
+      "names": [
+        "carpentry.txt"
+      ],
+      "content": "hammer\nsaw\nscrew driver\n"
+    },
+    {
+      "hash": "8976f449fe0e80e3d0f8348c4df0a6896063b07a",
+      "type": "tree",
+      "size": 110,
+      "references": [
+        "351a8f3b05db4025684d6acfd169a0301faf5e3c",
+        "568c309986d153c2e02461d3da1d983f38f46173",
+        "79a781cb81cb4803d59f786315468a9f51a0d2e7"
+      ],
+      "referencedBy": [
+        "68426cc558ed290b0381c4b5618283c29aaa0538"
+      ],
+      "names": [
+        "example-adding-files"
+      ],
+      "entries": [
+        {
+          "mode": "100644",
+          "name": "README.md",
+          "hash": "351a8f3b05db4025684d6acfd169a0301faf5e3c",
+          "type": "blob"
+        },
+        {
+          "mode": "40000",
+          "name": "food",
+          "hash": "568c309986d153c2e02461d3da1d983f38f46173",
+          "type": "tree"
+        },
+        {
+          "mode": "100644",
+          "name": "misc-items.txt",
+          "hash": "79a781cb81cb4803d59f786315468a9f51a0d2e7",
+          "type": "blob"
+        }
+      ]
+    },
+    {
+      "hash": "29cfb797d8b739dc603c5118383409ec79cfd29b",
+      "type": "tree",
+      "size": 110,
+      "references": [
+        "351a8f3b05db4025684d6acfd169a0301faf5e3c",
+        "3723a2c4e53cab6f81a685c1316897b3132e52af",
+        "79a781cb81cb4803d59f786315468a9f51a0d2e7"
+      ],
+      "referencedBy": [
+        "7188dacf337625d6052ce29a54f6be8b9bee38e9"
+      ],
+      "names": [
+        "example-adding-files"
+      ],
+      "entries": [
+        {
+          "mode": "100644",
+          "name": "README.md",
+          "hash": "351a8f3b05db4025684d6acfd169a0301faf5e3c",
+          "type": "blob"
+        },
+        {
+          "mode": "40000",
+          "name": "food",
+          "hash": "3723a2c4e53cab6f81a685c1316897b3132e52af",
+          "type": "tree"
+        },
+        {
+          "mode": "100644",
+          "name": "misc-items.txt",
+          "hash": "79a781cb81cb4803d59f786315468a9f51a0d2e7",
+          "type": "blob"
+        }
+      ]
+    },
+    {
+      "hash": "3723a2c4e53cab6f81a685c1316897b3132e52af",
+      "type": "tree",
+      "size": 38,
+      "references": [
+        "4a772685675a52de113df61f6c22360c2c6b9436"
+      ],
+      "referencedBy": [
+        "29cfb797d8b739dc603c5118383409ec79cfd29b"
+      ],
+      "names": [
+        "food"
+      ],
+      "entries": [
+        {
+          "mode": "100644",
+          "name": "fruits.txt",
+          "hash": "4a772685675a52de113df61f6c22360c2c6b9436",
+          "type": "blob"
+        }
+      ]
+    },
+    {
+      "hash": "d25784a5bc7e554a391e848b8b83e8c934b6a251",
+      "type": "tree",
+      "size": 79,
+      "references": [
+        "351a8f3b05db4025684d6acfd169a0301faf5e3c",
+        "79a781cb81cb4803d59f786315468a9f51a0d2e7"
+      ],
+      "referencedBy": [
+        "31d97915e89e4d7d6442f120a05c1e066d31777a"
+      ],
+      "names": [
+        "example-adding-files"
+      ],
+      "entries": [
+        {
+          "mode": "100644",
+          "name": "README.md",
+          "hash": "351a8f3b05db4025684d6acfd169a0301faf5e3c",
+          "type": "blob"
+        },
+        {
+          "mode": "100644",
+          "name": "misc-items.txt",
+          "hash": "79a781cb81cb4803d59f786315468a9f51a0d2e7",
+          "type": "blob"
+        }
+      ]
+    },
+    {
+      "hash": "4b65abcddd969f85c4fe16243acf00e3aa35b0d2",
+      "type": "tree",
+      "size": 37,
+      "references": [
+        "351a8f3b05db4025684d6acfd169a0301faf5e3c"
+      ],
+      "referencedBy": [
+        "d7f61bc940145cd60bc2dcbe5cde59d3e496da32"
+      ],
+      "names": [
+        "example-adding-files"
+      ],
+      "entries": [
+        {
+          "mode": "100644",
+          "name": "README.md",
+          "hash": "351a8f3b05db4025684d6acfd169a0301faf5e3c",
+          "type": "blob"
+        }
+      ]
+    }
+  ]
+}
